@@ -59,35 +59,54 @@ class="whatsapp">
 
 
 <!-- WHY CHOOSE US -->
-<section class="why-us" id="services">
-  <h2>Why Choose Us</h2>
+/* WHY CHOOSE US */
+.why-us {
+  padding: 90px 20px;
+  background: #f7fbff;
+  text-align: center;
+}
 
-  <div class="why-grid">
-    <div class="why-card">
-      <img src="Picture/icon-tech.png" alt="Advanced Technology">
-      <h3>Advanced Technology</h3>
-      <p>Digital X-rays & painless diagnostics.</p>
-    </div>
+.why-us h2 {
+  font-size: 36px;
+  color: #0066cc;
+  margin-bottom: 50px;
+}
 
-    <div class="why-card">
-      <img src="Picture/icon-care.png" alt="Gentle Care">
-      <h3>Gentle Care</h3>
-      <p>Comfort-focused, patient-friendly dentists.</p>
-    </div>
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    <div class="why-card">
-      <img src="Picture/icon-sterile.png" alt="Sterile Clinic">
-      <h3>Sterile Clinic</h3>
-      <p>High hygiene standards & safety.</p>
-    </div>
+.why-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
 
-    <div class="why-card">
-      <img src="Picture/icon-smile.png" alt="Smile Makeovers">
-      <h3>Smile Makeovers</h3>
-      <p>Cosmetic and restorative solutions.</p>
-    </div>
-  </div>
-</section>
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+.why-card img {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 15px;
+  color: #555;
+}
+
 
 
 

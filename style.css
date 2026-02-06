@@ -408,6 +408,44 @@ footer {
   border: 0;
   display: block;
 }
+/* REVIEWS SECTION */
+.reviews {
+  padding: 90px 20px;
+  background: #f7fbff;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 34px;
+  color: #0066cc;
+  margin-bottom: 40px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-size: 15px;
+}
+
+.review-card h4 {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.google-review-btn {
+  margin-top: 40px;
+}
+
 
 
 

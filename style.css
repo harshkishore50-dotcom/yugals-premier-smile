@@ -53,10 +53,13 @@ body {
     url("Picture/clinic-hero.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
+
 
 .hero-content {
   text-align: center;
@@ -171,3 +174,4 @@ footer {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+

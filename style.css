@@ -285,6 +285,54 @@ footer {
   margin-top: 25px;
   display: inline-block;
 }
+/* WHY CHOOSE US */
+.why-us {
+  padding: 90px 20px;
+  background: #f7fbff;
+  text-align: center;
+}
+
+.why-us h2 {
+  font-size: 36px;
+  color: #0066cc;
+  margin-bottom: 50px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.why-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+.why-card img {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 15px;
+  color: #555;
+}
+
 
 
 

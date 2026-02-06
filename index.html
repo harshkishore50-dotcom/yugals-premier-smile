@@ -136,22 +136,17 @@ class="whatsapp">
 <!-- APPOINTMENT FORM -->
 <section class="appointment" id="appointment">
   <h2>Book Appointment</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="tel" placeholder="Mobile Number" required>
-    <input type="date" required>
-    <textarea placeholder="Notes / Problem"></textarea>
-    <button type="submit">Submit</button>
+
+  <form class="appointment-form" onsubmit="sendWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="👤 Full Name" required>
+    <input type="tel" id="phone" placeholder="📞 Mobile Number" required>
+    <input type="date" id="date" required>
+    <textarea id="problem" placeholder="📝 Problem / Notes"></textarea>
+
+    <button type="submit" class="btn">📲 Book via WhatsApp</button>
   </form>
 </section>
-<section class="timings">
-  <h2>Clinic Timings</h2>
-  <div class="timing-box">
-    <p>🕘 Monday – Saturday</p>
-    <p>⏰ 10:00 AM – 7:00 PM</p>
-    <p>📞 Emergency Calls Accepted</p>
-  </div>
-</section>
+
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -185,9 +180,30 @@ class="whatsapp">
   <p>Designed & Managed by Clinic Team</p>
 </footer>
 
+<script>
+function sendWhatsApp() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const date = document.getElementById("date").value;
+  const problem = document.getElementById("problem").value;
+
+  const message =
+    `Hello, I want to book a dental appointment.%0A%0A` +
+    `Name: ${name}%0A` +
+    `Mobile: ${phone}%0A` +
+    `Preferred Date: ${date}%0A` +
+    `Problem: ${problem}`;
+
+  window.open(
+    `https://wa.me/918340564409?text=${message}`,
+    "_blank"
+  );
+}
+</script>
 
 </body>
 </html>
+
 
 
 

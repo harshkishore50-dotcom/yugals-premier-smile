@@ -19,13 +19,14 @@ body {
   top: 0;
   width: 100%;
   background: white;
-  padding: 15px 40px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   z-index: 1000;
 }
+
 
 .navbar .logo {
   font-size: 20px;
@@ -68,9 +69,10 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 56px;
-  margin-bottom: 15px;
+  font-size: 58px;
+  font-weight: 700;
 }
+
 
 .hero-content p {
   font-size: 22px;
@@ -174,4 +176,11 @@ footer {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.logo img {
+  height: 50px;
+}
+.btn:hover {
+  background: linear-gradient(135deg, #0052a3, #0094e0);
+}
+
 

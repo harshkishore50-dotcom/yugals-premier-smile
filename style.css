@@ -220,9 +220,11 @@ footer {
   border-radius: 18px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
+/* DOCTOR SECTION */
 .doctor {
   background: #ffffff;
   padding: 80px 20px;
+  text-align: center;
 }
 
 .doctor-box {
@@ -232,13 +234,27 @@ footer {
   margin: auto;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .doctor-box img {
-  width: 150px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
+.doctor-info h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.doctor-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
 /* CONTACT SECTION */
 .contact {
   background: #f7fbff;
@@ -269,6 +285,7 @@ footer {
   margin-top: 25px;
   display: inline-block;
 }
+
 
 
 

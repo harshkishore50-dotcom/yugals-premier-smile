@@ -182,5 +182,63 @@ footer {
 .btn:hover {
   background: linear-gradient(135deg, #0052a3, #0094e0);
 }
+.faq {
+  background: #ffffff;
+  padding: 80px 20px;
+}
+
+.faq-box {
+  max-width: 800px;
+  margin: 15px auto;
+  background: #f7fbff;
+  padding: 20px;
+  border-radius: 12px;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  font-size: 28px;
+  padding: 14px 18px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+.timings {
+  background: #f7fbff;
+  padding: 70px 20px;
+}
+
+.timing-box {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.doctor {
+  background: #ffffff;
+  padding: 80px 20px;
+}
+
+.doctor-box {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-box img {
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 
 

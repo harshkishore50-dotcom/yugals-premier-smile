@@ -1,0 +1,1 @@
+clinic-hero.jpg

@@ -333,6 +333,70 @@ footer {
   color: #555;
 }
 
+/* APPOINTMENT SECTION */
+.appointment {
+  padding: 90px 20px;
+  background: #f7fbff;
+  text-align: center;
+}
+
+.appointment h2 {
+  font-size: 34px;
+  color: #0066cc;
+  margin-bottom: 30px;
+}
+
+.appointment-form {
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.appointment-form input,
+.appointment-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.appointment-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.appointment-form button {
+  width: 100%;
+  margin-top: 15px;
+}
+/* CLINIC TIMINGS */
+.timings {
+  padding: 80px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.timings h2 {
+  font-size: 34px;
+  color: #0066cc;
+  margin-bottom: 25px;
+}
+
+.timing-card {
+  max-width: 420px;
+  margin: auto;
+  background: #f7fbff;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
 
 
 

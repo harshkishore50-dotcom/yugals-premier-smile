@@ -68,39 +68,110 @@ h1, h2, h3 {
 .navbar a:hover {
   color: var(--primary);
 }
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.navbar ul li a {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.navbar ul li a:hover {
+  color: var(--primary);
+}
 
 /* =====================
    HERO SECTION
 ===================== */
-.hero-section {
-  height: 85vh;
-  background:
-    linear-gradient(rgba(0,90,160,0.55), rgba(0,140,180,0.55)),
-    url("Picture/clinic-hero.jpg") center/cover no-repeat;
+.hero-premium {
+  position: relative;
+  height: 92vh;
+  background: url("Picture/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 0 10%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(11, 94, 215, 0.75),
+    rgba(24, 195, 200, 0.6)
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 650px;
+  color: #fff;
+  z-index: 2;
 }
 
 .hero-content h1 {
-  font-size: 56px;
-  color: white;
+  font-size: 52px;
+  line-height: 1.2;
   font-weight: 700;
 }
 
-.hero-tagline {
-  font-size: 22px;
-  color: #e0f7ff;
-  margin-top: 10px;
+.hero-content h1 span {
+  color: #e0faff;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin: 25px 0;
+  opacity: 0.95;
 }
 
 .hero-quote {
-  font-size: 18px;
-  color: #c9f3ff;
   font-style: italic;
-  margin: 25px 0 35px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--secondary), #0bbcd6);
+  padding: 15px 34px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(24,195,200,0.4);
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  padding: 15px 32px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
 
 /* =====================
    BUTTON
@@ -482,6 +553,21 @@ section:nth-child(even) {
 .direction-btn:hover {
   transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-premium {
+    padding: 0 6%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 
 
 

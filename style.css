@@ -283,6 +283,55 @@ section {
 section:nth-child(even) {
   background: var(--soft-blue);
 }
+.before-after {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f4fbff;
+}
+
+.before-after h2 {
+  font-size: 36px;
+  color: #0b5ed7;
+}
+
+.before-after .subtitle {
+  color: #5f6c7b;
+  margin-bottom: 40px;
+}
+
+.compare-container {
+  position: relative;
+  max-width: 420px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.compare-container img {
+  width: 100%;
+  display: block;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  appearance: none;
+  background: transparent;
+  z-index: 10;
+  cursor: pointer;
+}
+
 
 
 

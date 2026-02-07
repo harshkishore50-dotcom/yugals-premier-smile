@@ -135,37 +135,37 @@ class="whatsapp">
     <div class="service-card">Kids Dentistry</div>
   </div>
 </section>
-<section class="gallery">
+<section class="before-after">
   <h2>Smile Makeover Gallery</h2>
-  <p>Real results by our cosmetic dental specialists</p>
+  <p>Real transformations by our cosmetic dental specialists</p>
 
-  <!-- Case 1 -->
-  <div class="case">
+  <!-- CASE 1 -->
+  <div class="ba-card">
     <h3>Full Mouth Rehabilitation</h3>
 
-    <div class="compare">
-      <img src="Picture/before1.jpg" alt="Before">
-      <div class="compare-after">
-        <img src="Picture/after1.jpg" alt="After">
+    <div class="ba-container">
+      <img src="Picture/case1-before.jpg" class="ba-img">
+      <div class="ba-overlay">
+        <img src="Picture/case1-after.jpg">
       </div>
       <input type="range" min="0" max="100" value="50">
-      <span class="badge before">Before</span>
-      <span class="badge after">After</span>
+      <span class="ba-label before">Before</span>
+      <span class="ba-label after">After</span>
     </div>
   </div>
 
-  <!-- Case 2 -->
-  <div class="case">
+  <!-- CASE 2 -->
+  <div class="ba-card">
     <h3>Smile Design & Veneers</h3>
 
-    <div class="compare">
-      <img src="Picture/before2.jpg" alt="Before">
-      <div class="compare-after">
-        <img src="Picture/after2.jpg" alt="After">
+    <div class="ba-container">
+      <img src="Picture/case2-before.jpg" class="ba-img">
+      <div class="ba-overlay">
+        <img src="Picture/case2-after.jpg">
       </div>
       <input type="range" min="0" max="100" value="50">
-      <span class="badge before">Before</span>
-      <span class="badge after">After</span>
+      <span class="ba-label before">Before</span>
+      <span class="ba-label after">After</span>
     </div>
   </div>
 </section>
@@ -314,24 +314,6 @@ function sendWhatsApp() {
 }
 </script>
 <script>
-const slider = document.querySelector(".slider");
-const overlay = document.querySelector(".img-overlay");
-
-slider.addEventListener("input", function () {
-  overlay.style.width = slider.value + "%";
-});
-</script>
-<script>
-document.querySelectorAll(".img-compare").forEach(container => {
-  const slider = container.querySelector("input");
-  const after = container.querySelector(".after");
-
-  slider.addEventListener("input", () => {
-    after.style.width = slider.value + "%";
-  });
-});
-</script>
-<script>
 document.querySelectorAll(".compare").forEach(c => {
   const slider = c.querySelector("input");
   const after = c.querySelector(".compare-after");
@@ -342,8 +324,10 @@ document.querySelectorAll(".compare").forEach(c => {
 });
 </script>
 
+
 </body>
 </html>
+
 
 
 

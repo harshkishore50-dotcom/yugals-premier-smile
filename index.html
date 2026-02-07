@@ -135,6 +135,18 @@ class="whatsapp">
     <div class="service-card">Kids Dentistry</div>
   </div>
 </section>
+<section class="before-after">
+  <h2>Smile Makeover Results</h2>
+  <p class="subtitle">Real results by our cosmetic dental specialists</p>
+
+  <div class="compare-container">
+    <img src="Picture/after1.jpg" alt="After Treatment">
+    <div class="img-overlay">
+      <img src="Picture/before1.jpg" alt="Before Treatment">
+    </div>
+    <input type="range" min="0" max="100" value="50" class="slider">
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
@@ -278,9 +290,18 @@ function sendWhatsApp() {
   );
 }
 </script>
+<script>
+const slider = document.querySelector(".slider");
+const overlay = document.querySelector(".img-overlay");
+
+slider.addEventListener("input", function () {
+  overlay.style.width = slider.value + "%";
+});
+</script>
 
 </body>
 </html>
+
 
 
 

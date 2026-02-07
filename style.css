@@ -74,49 +74,101 @@ h1, h2, h3 {
 /* =====================
    HERO SECTION
 ===================== */
-.hero-premium {
-  position: relative;
-  height: 92vh;
-  background: url("Picture/clinic-hero.jpg") center/cover no-repeat;
+/* =========================
+   CLEAN PREMIUM HERO (RESET)
+========================= */
+
+.hero-clean {
+  min-height: 90vh;
+  background: url("Picture/clinic-hero.jpg") center right / cover no-repeat;
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 8%;
+  background-color: #eef6fb;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
+.hero-text {
+  max-width: 600px;
 }
 
-.hero-content {
-  position: relative;
-  max-width: 650px;
-  color: #ffffff;
-  z-index: 2;
-}
-
-.hero-content h1 {
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.hero-content p {
+.hero-small {
   font-size: 18px;
-  margin: 25px 0;
+  font-weight: 500;
+  color: #c45a9c; /* soft pink accent like reference */
+  margin-bottom: 12px;
 }
 
-.hero-quote {
-  font-style: italic;
-  font-size: 16px;
-  margin-bottom: 30px;
-  opacity: 0.9;
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: #0b5ed7;
+  line-height: 1.15;
+  margin-bottom: 8px;
 }
 
-.hero-buttons {
+.hero-subtitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 18px;
+  color: #5f6c7b;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.hero-actions {
   display: flex;
   gap: 18px;
+}
+
+.hero-btn {
+  padding: 14px 34px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero-btn.primary {
+  background: #c45a9c;
+  color: #fff;
+}
+
+.hero-btn.primary:hover {
+  background: #b04b8a;
+}
+
+.hero-btn.outline {
+  border: 2px solid #0b5ed7;
+  color: #0b5ed7;
+  background: transparent;
+}
+
+.hero-btn.outline:hover {
+  background: #0b5ed7;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* =====================
@@ -376,6 +428,7 @@ footer {
     font-size: 26px;
   }
 }
+
 
 
 

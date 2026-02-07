@@ -301,6 +301,30 @@ footer {
     text-align: center;
   }
 }
+/* ===== FIX INVISIBLE APPOINTMENT BUTTON ===== */
+.appointment-form .btn,
+.appointment-form button {
+  background: linear-gradient(135deg, #0b5ed7, #18c3c8);
+  color: #ffffff !important;
+
+  padding: 16px 44px;
+  font-size: 17px;
+  font-weight: 600;
+
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 14px 35px rgba(24,195,200,0.45);
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.appointment-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(24,195,200,0.6);
+}
+
 
 
 

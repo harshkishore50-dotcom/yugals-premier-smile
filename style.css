@@ -38,16 +38,21 @@ h1, h2, h3 {
    NAVBAR
 ===================== */
 .navbar {
-  background: #ffffff;
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: linear-gradient(135deg, #18c3c8, #0b5ed7);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
 }
+.navbar ul li a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  color: #e0faff;
+}
+
 
 .navbar img {
   height: 45px;
@@ -91,28 +96,27 @@ h1, h2, h3 {
 .hero-premium {
   position: relative;
   height: 92vh;
-  background: url("Picture/hero.jpg") center/cover no-repeat;
+  background: url("Picture/clinic-hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 0 10%;
 }
 
+/* VERY LIGHT DARK SHADE (not turquoise) */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(11, 94, 215, 0.75),
-    rgba(24, 195, 200, 0.6)
-  );
+  background: rgba(0, 0, 0, 0.35);
 }
+
 
 .hero-content {
   position: relative;
   max-width: 650px;
-  color: #fff;
+  color: #ffffff;
   z-index: 2;
 }
+
 
 .hero-content h1 {
   font-size: 52px;
@@ -567,6 +571,7 @@ section:nth-child(even) {
     align-items: flex-start;
   }
 }
+
 
 
 

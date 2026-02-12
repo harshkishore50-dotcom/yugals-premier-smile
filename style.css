@@ -429,6 +429,74 @@ footer {
   }
 }
 
+/* =========================
+   TESTIMONIAL SECTION SPACING
+========================= */
+
+.testimonials {
+  padding: 120px 20px;          /* more top & bottom space */
+  background: #eef9ff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 40px;
+  margin-bottom: 35px;
+}
+
+.testimonials p,
+.testimonials div {
+  max-width: 750px;
+  margin: 12px auto;            /* space between quotes */
+  font-size: 18px;
+  line-height: 1.9;             /* nicer breathing */
+}
+
+
+/* =========================
+   FAQ SECTION PREMIUM SPACING
+========================= */
+
+.faq {
+  padding: 130px 20px;          /* large clean spacing */
+  background: #ffffff;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+/* Each FAQ block */
+.faq-box {
+  max-width: 760px;
+  margin: 22px auto;            /* SPACE BETWEEN QUESTIONS */
+  padding: 22px 28px;
+  border-radius: 14px;
+  background: #f4fbff;
+  transition: 0.25s ease;
+}
+
+/* Question */
+.faq-box h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #0b5ed7;
+}
+
+/* Answer */
+.faq-box p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Hover effect (premium feel) */
+.faq-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
 
 
 

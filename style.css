@@ -500,126 +500,165 @@ footer {
    DOCTOR INTRO SECTION
 ========================= */
 
-.doctor-intro {
-  padding: 120px 20px;
-  background: linear-gradient(180deg, #ffffff, #f4fbff);
+/* =========================
+   ELITE DOCTOR SECTION
+========================= */
+
+.doctor-elite {
+  padding: 140px 20px;
+  background: linear-gradient(180deg, #f8fcff, #ffffff);
+  display: flex;
+  justify-content: center;
 }
 
-.doctor-container {
+.doctor-card {
   max-width: 1100px;
-  margin: auto;
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
+  padding: 60px;
+  border-radius: 30px;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.08);
 }
 
-.doctor-image img {
+/* ================= PHOTO AREA ================= */
+
+.doctor-photo-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Floating abstract shape */
+.doctor-bg-shape {
+  position: absolute;
   width: 320px;
-  border-radius: 25px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  height: 320px;
+  background: radial-gradient(circle, rgba(24,195,200,0.35), transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatShape 6s ease-in-out infinite;
 }
 
-.doctor-content {
+@keyframes floatShape {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Circular Image */
+.doctor-image img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 6px solid #fff;
+
+  /* Glow Pulse */
+  box-shadow: 0 0 0 0 rgba(24,195,200,0.5);
+  animation: pulseGlow 3s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24,195,200,0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 25px rgba(24,195,200,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24,195,200,0);
+  }
+}
+
+/* Verified Badge */
+.verified-badge {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #18c3c8, #0b5ed7);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(24,195,200,0.3);
+}
+
+/* LinkedIn Button */
+.linkedin-btn {
+  margin-top: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0077b5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.linkedin-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ================= TEXT AREA ================= */
+
+.doctor-info {
   flex: 1;
 }
 
 .doctor-tag {
   color: #18c3c8;
   font-weight: 600;
-  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
-.doctor-content h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
+.doctor-info h2 {
+  font-size: 42px;
   color: #0b5ed7;
+  margin-bottom: 10px;
 }
 
 .doctor-degree {
   font-weight: 500;
-  color: #5f6c7b;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.doctor-highlighted {
+  text-align: center;
+  color: #18c3c8;
+  font-weight: 500;
+  margin-bottom: 25px;
 }
 
 .doctor-description {
   font-size: 17px;
   line-height: 1.8;
   margin-bottom: 25px;
-  color: #444;
 }
 
-.doctor-highlight {
+.doctor-quote {
   font-style: italic;
   color: #0b5ed7;
-  margin-bottom: 35px;
-}
-
-.doctor-stats {
-  display: flex;
-  gap: 40px;
-}
-
-.doctor-stats h3 {
-  font-size: 22px;
-  color: #18c3c8;
-  margin-bottom: 5px;
-}
-
-.doctor-stats span {
-  font-size: 14px;
-  color: #5f6c7b;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .doctor-container {
+  .doctor-card {
     flex-direction: column;
     text-align: center;
+    padding: 40px 20px;
   }
-
-  .doctor-stats {
-    justify-content: center;
-  }
-}
-/* =========================
-   PREMIUM DOCTOR PHOTO STYLE
-========================= */
-
-.doctor-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.doctor-image img {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 50%;               /* makes it circle */
-  border: 6px solid #ffffff;
-  box-shadow: 
-    0 0 0 8px rgba(24,195,200,0.15),  /* turquoise outer ring */
-    0 25px 50px rgba(0,0,0,0.15);
-  transition: 0.4s ease;
-}
-
-/* Soft glow animation */
-.doctor-image img:hover {
-  transform: scale(1.03);
-  box-shadow:
-    0 0 0 10px rgba(24,195,200,0.25),
-    0 30px 60px rgba(0,0,0,0.2);
-}
-
-.doctor-highlighted {
-  text-align: center;
-  font-weight: 500;
-  color: #18c3c8;
-  margin-top: 8px;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
 }
 
 

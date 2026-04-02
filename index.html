@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yugal's Premier Smile Dental Clinic | Best Dentist in Ranchi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #FAF8F3;
+    --ivory: #F4F0E6;
+    --gold: #C9A84C;
+    --gold-light: #E8D49A;
+    --gold-dark: #8B6914;
+    --teal: #1B6B6B;
+    --teal-light: #2D9B9B;
+    --teal-pale: #E8F4F4;
+    --charcoal: #2C2C2A;
+    --warm-gray: #7A7570;
+    --white: #FFFFFF;
+    --shadow: rgba(44,44,42,0.08);
+    --shadow-strong: rgba(44,44,42,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ─── CURSOR ─── */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s, width 0.3s, height 0.3s, background 0.3s;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.2s ease;
+    opacity: 0.5;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 1.2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(250,248,243,0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 30px var(--shadow);
+    padding: 0.8rem 3rem;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo img { height: 38px; }
+  .nav-logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
+  }
+  .nav-logo-text span {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--warm-gray);
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--gold-dark); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--teal) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--teal-light) !important; transform: translateY(-1px); }
+  .nav-cta::after { display: none !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--ivory) 0%, var(--cream) 60%, var(--teal-pale) 100%);
+    z-index: 0;
+  }
+  .hero-ornament {
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    z-index: 1;
+    animation: float 8s ease-in-out infinite;
+  }
+  .hero-ornament-2 {
+    position: absolute;
+    left: -100px; bottom: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(27,107,107,0.06) 0%, transparent 70%);
+    z-index: 1;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.03); }
+  }
+  .hero-content {
+    grid-column: 1;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 4rem 5rem 5rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 30px; height: 1px;
+    background: var(--teal);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    line-height: 1.08;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+    opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-dark);
+  }
+  .hero-title strong {
+    display: block;
+    font-weight: 600;
+    color: var(--teal);
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--warm-gray);
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease 0.55s forwards;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--warm-gray);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(27,107,107,0.25);
+  }
+  .btn-primary:hover {
+    background: var(--teal-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(27,107,107,0.35);
+  }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--charcoal);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--charcoal);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    background: var(--charcoal);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .hero-image-col {
+    grid-column: 2;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    padding: 6rem 3rem 3rem;
+    opacity: 0; animation: fadeIn 1s ease 0.5s forwards;
+  }
+  .hero-image-frame {
+    position: relative;
+    width: 420px; max-width: 100%;
+  }
+  .hero-image-frame::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border: 1px solid var(--gold-light);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    animation: morphBorder 8s ease-in-out infinite;
+    z-index: -1;
+  }
+  @keyframes morphBorder {
+    0%, 100% { border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; }
+    50% { border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; }
+  }
+  .hero-image-frame img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 35% 65% 65% 35% / 35% 35% 65% 65%;
+    animation: morphImg 8s ease-in-out infinite;
+    display: block;
+  }
+  @keyframes morphImg {
+    0%, 100% { border-radius: 35% 65% 65% 35% / 35% 35% 65% 65%; }
+    50% { border-radius: 65% 35% 35% 65% / 65% 65% 35% 35%; }
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 30px; left: -20px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1rem 1.3rem;
+    box-shadow: 0 8px 30px var(--shadow-strong);
+    display: flex; align-items: center; gap: 10px;
+    animation: slideInLeft 0.8s ease 1s both;
+  }
+  .hero-badge-icon {
+    width: 40px; height: 40px;
+    background: var(--teal-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+  .hero-badge-text { font-size: 0.78rem; }
+  .hero-badge-text strong { display: block; color: var(--charcoal); font-weight: 500; }
+  .hero-badge-text span { color: var(--warm-gray); }
+  .hero-badge-2 {
+    position: absolute;
+    top: 60px; right: -20px;
+    background: var(--teal);
+    border-radius: 16px;
+    padding: 1rem 1.3rem;
+    box-shadow: 0 8px 30px rgba(27,107,107,0.3);
+    color: var(--white);
+    animation: slideInRight 0.8s ease 1.2s both;
+  }
+  .hero-badge-2 .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600; line-height: 1;
+  }
+  .hero-badge-2 .lbl {
+    font-size: 0.7rem; opacity: 0.8; letter-spacing: 0.05em;
+  }
+  .hero-stats {
+    display: flex; gap: 2rem;
+    margin-top: 2.5rem;
+    opacity: 0; animation: fadeUp 0.8s ease 1s forwards;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600;
+    color: var(--charcoal); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: var(--warm-gray);
+    letter-spacing: 0.05em; margin-top: 2px;
+  }
+  .stat-divider { width: 1px; background: var(--gold-light); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── SECTION COMMONS ─── */
+  section { padding: 7rem 5rem; }
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block; width: 24px; height: 1px;
+    background: var(--teal);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold-dark); }
+  .section-desc {
+    font-size: 0.95rem;
+    color: var(--warm-gray);
+    line-height: 1.75;
+    max-width: 500px;
+  }
+
+  /* ─── WHY CHOOSE US ─── */
+  .why-us {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .why-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .why-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+  .why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--shadow); }
+  .why-card:hover::before { opacity: 1; }
+  .why-card:hover .why-icon-wrap { background: rgba(255,255,255,0.15); }
+  .why-card:hover .why-card-title { color: var(--white); }
+  .why-card:hover .why-card-desc { color: rgba(255,255,255,0.8); }
+  .why-card:hover img { filter: brightness(0) invert(1); }
+  .why-icon-wrap {
+    width: 48px; height: 48px;
+    background: var(--teal-pale);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+    position: relative; z-index: 1;
+    transition: background 0.3s;
+  }
+  .why-icon-wrap img { width: 26px; height: 26px; object-fit: contain; }
+  .why-card-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    margin-bottom: 0.4rem;
+    position: relative; z-index: 1;
+    transition: color 0.3s;
+  }
+  .why-card-desc {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+    position: relative; z-index: 1;
+    transition: color 0.3s;
+  }
+
+  /* ─── DOCTOR ─── */
+  .doctor-section {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .doctor-img-wrap {
+    position: relative;
+  }
+  .doctor-img-wrap img {
+    width: 100%;
+    max-width: 440px;
+    border-radius: 30px;
+    display: block;
+    box-shadow: 0 20px 60px var(--shadow-strong);
+    transition: transform 0.4s ease;
+  }
+  .doctor-img-wrap:hover img { transform: scale(1.02); }
+  .doctor-accent {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-light);
+    z-index: -1;
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .doctor-verified {
+    position: absolute;
+    top: 20px; right: -15px;
+    background: var(--gold);
+    color: var(--white);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
+    50% { box-shadow: 0 4px 30px rgba(201,168,76,0.7); }
+  }
+  .doctor-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--teal);
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--gold);
+  }
+  .doctor-credentials {
+    display: flex; gap: 0.8rem; flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .credential-tag {
+    background: var(--teal-pale);
+    color: var(--teal);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  /* ─── SERVICES ─── */
+  .services-section {
+    background: var(--white);
+  }
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 2.2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 50px var(--shadow); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+    transition: color 0.3s;
+  }
+  .service-card:hover .service-number { color: var(--gold); }
+  .service-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  .service-desc {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+  .service-icon {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-size: 1.8rem;
+    opacity: 0.2;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .service-card:hover .service-icon { opacity: 0.6; transform: rotate(-10deg) scale(1.2); }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials-section {
+    background: var(--teal);
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonials-section::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30rem;
+    position: absolute;
+    top: -6rem; left: -2rem;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .testimonials-section .section-eyebrow { color: var(--gold-light); }
+  .testimonials-section .section-eyebrow::before { background: var(--gold-light); }
+  .testimonials-section .section-title { color: var(--white); }
+  .testimonials-section .section-desc { color: rgba(255,255,255,0.65); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  .testimonial-card:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-4px);
+  }
+  .stars { color: var(--gold); letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1rem; }
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.75;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 10px; }
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--teal);
+    background: var(--white);
+  }
+  .author-name { font-size: 0.85rem; font-weight: 500; color: var(--white); }
+  .author-tag { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+  /* ─── FAQ ─── */
+  .faq-section {
+    background: var(--ivory);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .faq-list { margin-top: 1rem; }
+  .faq-item {
+    border-bottom: 1px solid rgba(44,44,42,0.1);
+    padding: 1.5rem 0;
+    cursor: pointer;
+  }
+  .faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    gap: 1rem;
+  }
+  .faq-toggle {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--teal-pale);
+    color: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    font-weight: 300;
+  }
+  .faq-item.open .faq-toggle {
+    background: var(--teal);
+    color: var(--white);
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    font-size: 0.88rem;
+    color: var(--warm-gray);
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 200px;
+    padding-top: 0.8rem;
+  }
+
+  /* ─── APPOINTMENT ─── */
+  .appointment-section {
+    background: var(--white);
+    text-align: center;
+  }
+  .appointment-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .appointment-card {
+    background: linear-gradient(135deg, var(--teal) 0%, #0F4A4A 100%);
+    border-radius: 32px;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+  .appointment-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 60%;
+    height: 200%;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+    transform: skewX(-10deg);
+  }
+  .appointment-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+  .appointment-card p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    position: relative;
+  }
+  .appt-actions {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    position: relative;
+  }
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--white);
+    color: var(--teal);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #25D366;
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  }
+  .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .contact-items { margin-top: 2rem; }
+  .contact-item {
+    display: flex; gap: 1.2rem;
+    align-items: flex-start;
+    margin-bottom: 1.8rem;
+  }
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: var(--teal-pale);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .contact-item:hover .contact-icon {
+    background: var(--teal);
+    transform: scale(1.05);
+  }
+  .contact-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-gray);
+    margin-bottom: 0.2rem;
+  }
+  .contact-value {
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    font-weight: 400;
+  }
+  .contact-value a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-value a:hover { color: var(--teal); }
+  .map-embed {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px var(--shadow);
+    height: 320px;
+    background: var(--ivory);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .map-embed iframe {
+    width: 100%; height: 100%; border: 0; display: block;
+  }
+  .timing-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 20px var(--shadow);
+    margin-top: 2rem;
+  }
+  .timing-card h4 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--warm-gray);
+    margin-bottom: 1rem;
+  }
+  .timing-row {
+    display: flex; justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--ivory);
+    font-size: 0.88rem;
+  }
+  .timing-row:last-child { border-bottom: none; }
+  .timing-day { color: var(--warm-gray); }
+  .timing-time { font-weight: 500; color: var(--teal); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.5);
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 300;
+  }
+  footer p { font-size: 0.82rem; }
+
+  /* ─── WHATSAPP FLOAT ─── */
+  .wa-float {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    z-index: 500;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    animation: floatBounce 3s ease-in-out infinite;
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  @keyframes floatBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* ─── SCROLL PROGRESS BAR ─── */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s linear;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    section { padding: 5rem 2rem; }
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.7rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-content { padding: 7rem 2rem 3rem; }
+    .hero-title { font-size: 3rem; }
+    .hero-image-col { display: none; }
+    .why-us, .doctor-section, .faq-section, .contact-section {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .services-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/918340564409?text=Hello%20I%20want%20to%20book%20a%20dental%20appointment" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/logo.png" alt="Yugal's Premier Smile" onerror="this.style.display='none'"/>
+    <div class="nav-logo-text">
+      Yugal's Premier Smile
+      <span>Dental Clinic · Ranchi</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why-us">About</a></li>
+    <li><a href="#doctor">Doctor</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/918340564409?text=Hello%20I%20want%20to%20book%20a%20dental%20appointment" class="nav-cta" target="_blank">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-ornament-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Best Dental Clinic in Ranchi</div>
+    <h1 class="hero-title">
+      Transform Your<br>
+      <em>Smile</em> with<br>
+      <strong>Yugal's Premier</strong>
+    </h1>
+    <p class="hero-subtitle">Advanced Care, Gentle Touch</p>
+    <p class="hero-desc">Experience painless, precision dental care in a warm and welcoming environment. Your confident smile begins here.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/918340564409?text=Hello%20I%20want%20to%20book%20a%20dental%20appointment" class="btn-primary" target="_blank">
+        📅 Book Appointment
+      </a>
+      <a href="#services" class="btn-outline">
+        Our Services →
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num" data-count="500">0</div>
+        <div class="stat-label">Happy Patients</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="6">0</div>
+        <div class="stat-label">Services</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="5">0</div>
+        <div class="stat-label">Star Rating</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image-col">
+    <div class="hero-image-frame">
+      <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/doctor.jpg" alt="Dr. Chinmoy Anand" onerror="this.src='https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80'"/>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">🦷</div>
+        <div class="hero-badge-text">
+          <strong>Pain-Free Treatment</strong>
+          <span>Modern techniques</span>
+        </div>
+      </div>
+      <div class="hero-badge-2">
+        <div class="num">5★</div>
+        <div class="lbl">Google Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-us" id="why-us">
+  <div>
+    <div class="section-eyebrow reveal">Why Choose Us</div>
+    <h2 class="section-title reveal reveal-delay-1">Your smile deserves <em>the best care</em></h2>
+    <p class="section-desc reveal reveal-delay-2">We combine advanced technology with compassionate care to create a dental experience that's truly exceptional.</p>
+  </div>
+  <div class="why-cards">
+    <div class="why-card reveal">
+      <div class="why-icon-wrap">
+        <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/icon-tech.png" alt="" onerror="this.parentElement.innerHTML='🔬'"/>
+      </div>
+      <div class="why-card-title">Advanced Technology</div>
+      <div class="why-card-desc">Digital X-rays & painless diagnostics for accurate, fast care.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon-wrap">
+        <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/icon-care.png" alt="" onerror="this.parentElement.innerHTML='💙'"/>
+      </div>
+      <div class="why-card-title">Gentle Care</div>
+      <div class="why-card-desc">Comfort-focused, patient-friendly approach to every procedure.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon-wrap">
+        <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/icon-sterile.png" alt="" onerror="this.parentElement.innerHTML='🏥'"/>
+      </div>
+      <div class="why-card-title">Sterile Clinic</div>
+      <div class="why-card-desc">Highest hygiene standards and strict safety protocols.</div>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-icon-wrap">
+        <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/icon-smile.png" alt="" onerror="this.parentElement.innerHTML='😁'"/>
+      </div>
+      <div class="why-card-title">Smile Makeovers</div>
+      <div class="why-card-desc">Cosmetic & restorative solutions for your perfect smile.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctor -->
+<section class="doctor-section" id="doctor">
+  <div class="doctor-img-wrap reveal">
+    <img src="https://harshkishore50-dotcom.github.io/yugals-premier-smile/Picture/doctor.jpg" alt="Dr. Chinmoy Anand" onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80'"/>
+    <div class="doctor-accent"></div>
+    <div class="doctor-verified">✔ Verified Dentist</div>
+  </div>
+  <div>
+    <div class="section-eyebrow reveal">Meet Your Dentist</div>
+    <h2 class="section-title reveal reveal-delay-1">Dr. Chinmoy <em>Anand</em></h2>
+    <p class="reveal reveal-delay-2" style="color: var(--warm-gray); font-size: 0.9rem; line-height: 1.7;">
+      BDS – Cosmetic & Restorative Dentist<br>
+      ABSMIDS, Mangalore · Practice at Samara, Russia
+    </p>
+    <p class="reveal reveal-delay-2" style="margin-top: 1rem; font-size: 0.92rem; color: var(--warm-gray); line-height: 1.8;">
+      Dr. Chinmoy Anand is dedicated to creating confident, healthy smiles through modern and painless dental care. With advanced training in cosmetic and restorative dentistry, he focuses on precision, comfort, and long-lasting results.
+    </p>
+    <blockquote class="doctor-quote reveal reveal-delay-3">
+      "Every smile tells a story — my goal is to make yours confident and beautiful."
+    </blockquote>
+    <div class="doctor-credentials reveal reveal-delay-4">
+      <span class="credential-tag">Cosmetic Dentistry</span>
+      <span class="credential-tag">Restorative Care</span>
+      <span class="credential-tag">Painless Treatment</span>
+      <span class="credential-tag">Kids Specialist</span>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-eyebrow reveal">Our Expertise</div>
+      <h2 class="section-title reveal reveal-delay-1">Complete Dental <em>Solutions</em></h2>
+    </div>
+    <p class="section-desc reveal reveal-delay-2">From routine check-ups to full smile makeovers — we cover everything your smile needs.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-number">01</span>
+      <div class="service-name">General Dentistry</div>
+      <div class="service-desc">Comprehensive check-ups, cleanings, fillings, and preventive care for lasting oral health.</div>
+      <span class="service-icon">🦷</span>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <span class="service-number">02</span>
+      <div class="service-name">Teeth Whitening</div>
+      <div class="service-desc">Professional-grade whitening treatments that restore your smile's natural brilliance.</div>
+      <span class="service-icon">✨</span>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <span class="service-number">03</span>
+      <div class="service-name">Root Canal Treatment</div>
+      <div class="service-desc">Painless, precise root canal therapy using modern techniques and equipment.</div>
+      <span class="service-icon">⚕️</span>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <span class="service-number">04</span>
+      <div class="service-name">Dental Implants</div>
+      <div class="service-desc">Permanent, natural-looking tooth replacements that restore function and confidence.</div>
+      <span class="service-icon">🔩</span>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <span class="service-number">05</span>
+      <div class="service-name">Orthodontics</div>
+      <div class="service-desc">Braces and aligners for beautifully straight teeth and a perfectly aligned bite.</div>
+      <span class="service-icon">📐</span>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <span class="service-number">06</span>
+      <div class="service-name">Kids Dentistry</div>
+      <div class="service-desc">Gentle, fun, and reassuring dental care designed especially for our youngest patients.</div>
+      <span class="service-icon">👶</span>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-eyebrow reveal">Patient Stories</div>
+  <h2 class="section-title reveal reveal-delay-1">What Our Patients <em>Say</em></h2>
+  <p class="section-desc reveal reveal-delay-2">Real experiences from real patients who trusted us with their smiles.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Very clean clinic and painless treatment. Highly recommended — I was nervous but Dr. Anand made me completely at ease."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">RK</div>
+        <div>
+          <div class="author-name">Rahul Kumar</div>
+          <div class="author-tag">Verified Patient · Root Canal</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Doctor explained everything clearly. I felt informed at every step. Very satisfied with my teeth whitening results!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">PS</div>
+        <div>
+          <div class="author-name">Pooja Sharma</div>
+          <div class="author-tag">Verified Patient · Whitening</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Best dental clinic in Ranchi! Friendly staff, modern equipment, and the most painless dental experience I've ever had."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">AV</div>
+        <div>
+          <div class="author-name">Aman Verma</div>
+          <div class="author-tag">Verified Patient · Implants</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 3rem;" class="reveal">
+    <a href="https://www.google.com/search?q=Yugal's+Premier+Smile+Dental+Clinic+Ranchi" target="_blank" class="btn-white">⭐ View All Google Reviews</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div>
+    <div class="section-eyebrow reveal">Got Questions?</div>
+    <h2 class="section-title reveal reveal-delay-1">Frequently <em>Asked</em> Questions</h2>
+    <p class="section-desc reveal reveal-delay-2">Everything you need to know before your visit. Can't find what you're looking for? Just call us.</p>
+    <div style="margin-top: 2rem;" class="reveal reveal-delay-3">
+      <a href="tel:+918340564409" class="btn-primary">📞 Call Us Now</a>
+    </div>
+  </div>
+  <div class="faq-list reveal reveal-delay-1">
+    <div class="faq-item">
+      <div class="faq-question">
+        Is dental treatment painful?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">No. We use the latest modern painless techniques, including local anesthesia and gentle instrumentation, to ensure your complete comfort throughout every procedure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Do you accept emergency cases?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">Yes, we accept emergency dental cases. Please call us immediately at +91 8340564409 and we will accommodate you as quickly as possible.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Do you treat children?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">Absolutely! We have a dedicated kids dentistry service designed to be gentle, fun, and reassuring. We help children develop healthy dental habits for life.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        What are your clinic hours?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">We are open Monday through Saturday, 10:00 AM to 7:00 PM. Emergency calls are accepted outside these hours as well.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I book an appointment?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">You can book an appointment by calling us at +91 8340564409 or simply clicking the WhatsApp button to chat with us instantly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Appointment CTA -->
+<section class="appointment-section" id="appointment">
+  <div class="appointment-inner">
+    <div class="section-eyebrow reveal" style="justify-content: center;">Ready to Begin?</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align: center;">Book Your Appointment <em>Today</em></h2>
+  </div>
+  <div class="appointment-inner">
+    <div class="appointment-card reveal">
+      <h3>Transform Your Smile Today</h3>
+      <p>Join hundreds of happy patients in Ranchi who trust Yugal's Premier Smile for their dental care. Your first step to a confident, beautiful smile is just one click away.</p>
+      <div class="appt-actions">
+        <a href="tel:+918340564409" class="btn-white">📞 Call +91 8340564409</a>
+        <a href="https://wa.me/918340564409?text=Hello%20I%20want%20to%20book%20a%20dental%20appointment" class="btn-whatsapp" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+  <div>
+    <div class="section-eyebrow reveal">Find Us</div>
+    <h2 class="section-title reveal reveal-delay-1">Visit Our <em>Clinic</em></h2>
+    <div class="contact-items">
+      <div class="contact-item reveal reveal-delay-1">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-value">Near TOP Pundag Police Station,<br>Kathal More Road, Ranchi</div>
+        </div>
+      </div>
+      <div class="contact-item reveal reveal-delay-2">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+918340564409">+91 8340564409</a></div>
+        </div>
+      </div>
+      <div class="contact-item reveal reveal-delay-3">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div class="contact-label">Hours</div>
+          <div class="contact-value">Mon – Sat &nbsp;|&nbsp; 10:00 AM – 7:00 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="timing-card reveal reveal-delay-4">
+      <h4>Clinic Schedule</h4>
+      <div class="timing-row">
+        <span class="timing-day">Monday – Saturday</span>
+        <span class="timing-time">10:00 AM – 7:00 PM</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-day">Sunday</span>
+        <span class="timing-time" style="color: var(--warm-gray);">Closed</span>
+      </div>
+      <div class="timing-row">
+        <span class="timing-day">Emergency</span>
+        <span class="timing-time">Calls Accepted 24/7</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="map-embed reveal">
+      <iframe
+        src="https://maps.google.com/maps?q=Yugal's+Premier+Smile+Dental+Clinic+Ranchi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Clinic Location">
+      </iframe>
+    </div>
+    <div style="text-align: center; margin-top: 1rem;" class="reveal">
+      <a href="https://maps.google.com/?q=Yugal's Premier Smile Dental Clinic Ranchi" target="_blank" class="btn-primary" style="display: inline-flex; margin-top: 1rem;">📍 Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <div class="logo-text">Yugal's Premier Smile</div>
+    <p style="margin-top: 0.3rem; font-size: 0.78rem;">Dental Clinic · Ranchi, Jharkhand</p>
+  </div>
+  <div style="text-align: center;">
+    <p>Mon–Sat · 10 AM – 7 PM</p>
+    <p><a href="tel:+918340564409" style="color: var(--gold-light); text-decoration: none;">+91 8340564409</a></p>
+  </div>
+  <div style="text-align: right;">
+    <p>© 2026 Yugal's Premier Smile Dental Clinic</p>
+    <p style="margin-top: 0.3rem; font-size: 0.75rem;">Redesigned with ♥</p>
+  </div>
+</footer>
+
+<script>
+// ─── CURSOR ───
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx - 6 + 'px';
+  cursor.style.top = my - 6 + 'px';
+});
+function animateRing() {
+  rx += (mx - rx - 18) * 0.15;
+  ry += (my - ry - 18) * 0.15;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+document.querySelectorAll('a, button, .faq-item, .service-card, .why-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '20px';
+    cursor.style.height = '20px';
+    ring.style.width = '50px';
+    ring.style.height = '50px';
+    ring.style.marginLeft = '-7px';
+    ring.style.marginTop = '-7px';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '12px';
+    cursor.style.height = '12px';
+    ring.style.width = '36px';
+    ring.style.height = '36px';
+    ring.style.marginLeft = '0';
+    ring.style.marginTop = '0';
+  });
+});
+
+// ─── SCROLL PROGRESS ───
+window.addEventListener('scroll', () => {
+  const scroll = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  document.getElementById('progress-bar').style.width = (scroll / height * 100) + '%';
+  
+  // Nav
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', scroll > 50);
+});
+
+// ─── REVEAL ON SCROLL ───
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// ─── COUNTER ANIMATION ───
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = target === 5 ? '★' : '+';
+  let count = 0;
+  const step = Math.ceil(target / 50);
+  const timer = setInterval(() => {
+    count = Math.min(count + step, target);
+    el.textContent = count + suffix;
+    if (count >= target) clearInterval(timer);
+  }, 30);
+}
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('[data-count]').forEach(animateCounter);
+      statsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+const statsEl = document.querySelector('.hero-stats');
+if (statsEl) statsObserver.observe(statsEl);
+
+// ─── FAQ ───
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ─── SMOOTH ANCHOR ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
